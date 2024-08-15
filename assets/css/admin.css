@@ -1,0 +1,148 @@
+body {
+  background-color: #fff;
+}
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #f8f8f8;
+  padding: 16px 4px;
+  box-shadow: 0px 1px 4px 1px #ccc;
+}
+.btn-product:hover {
+  background-color: #f08080;
+}
+.title-main {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+table,
+td {
+  border: 1px solid #ccc;
+  border-collapse: collapse;
+}
+td {
+  text-align: center;
+  vertical-align: middle !important;
+}
+table .img {
+  display: flex;
+  align-items: center;
+  /* justify-content: space-between; */
+  padding: 8px 16px 8px 8px;
+}
+table .img .product-name {
+  margin: 0;
+  margin-left: 8px;
+}
+.modal-add-product,
+.modal-modify-product {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9999;
+  background: rgba(0, 0, 0, 0.4);
+  /* display: flex; */
+  justify-content: center;
+  align-items: center;
+  animation: appear 0.4s ease-in-out;
+}
+@keyframes appear {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+}
+
+dialog {
+  animation: appear 350ms ease-in 1;
+  max-width: 500px;
+}
+
+.modal-add-product form,
+.modal-modify-product form {
+  background-color: #fff;
+  padding: 32px;
+  position: relative;
+  width: 400px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+.modal-add-product form,
+.modal-modify-product form label {
+  font-weight: normal;
+  color: #333;
+}
+.form-item {
+  display: flex;
+  flex-direction: column;
+  margin: 8px 0;
+}
+.dir-row {
+  flex-direction: row;
+  justify-content: space-between;
+}
+.dir-row label {
+  margin-right: 8px;
+}
+select {
+  padding: 4px;
+  border-radius: 4px;
+}
+/* form div:last-child {
+  width: 100%;
+} */
+form .btnThem button {
+  border: none;
+  width: 100%;
+  padding: 8px;
+  border-radius: 4px;
+}
+form .btnThem button:hover {
+  background-color: #000;
+  color: #fff;
+}
+form > .importJSON {
+  margin: 20px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  
+}
+form > .modal-close {
+  display: inline-block;
+  position: absolute;
+  top: 10px;
+  right: 32px;
+  cursor: pointer;
+}
+.listPage{
+  padding:10px;
+  text-align: center;
+  list-style: none;
+}
+.listPage li{
+  background-color: #ffffffBD;
+  padding:20px;
+  display: inline-block;
+  cursor: pointer;
+}
+.listPage .active{
+  background-color: #efb0c9;
+  color:#fff;
+}
+.listPage li:hover {
+  background-color: #f8dae9;
+  opacity: .8;
+  color: #fff;
+}
+
+/* export */
+.export-file {
+  display: none;
+}

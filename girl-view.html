@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="" />
+    <meta name="author" content="webtrap">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    <title>Thời trang nữ</title>
+
+    <!-- Favicone Icon -->
+    <link rel="shortcut icon" type="image/x-icon" href="./assets/images/favicon.ico">
+    <link rel="icon" type="image/png" href="./assets/images/favicon.png">
+    <link rel="apple-touch-icon" href="./assets/images/favicon.png">
+    <link href="./assets/css/jquery-ui.css" rel="stylesheet">
+    <link href="./assets/Bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="./assets/css/style.css" rel="stylesheet" type="text/css">
+    <link href="./assets/css/font-awesome.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Poppins:400,500,600,300,700' rel='stylesheet' type='text/css'>
+    <script src="https://kit.fontawesome.com/203ae9be09.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+        integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+        crossorigin="anonymous" />
+    <link rel="stylesheet" href="./assets/fonts/fontawesome-free-6.5.1-web/fontawesome-free-6.5.1-web/css/all.css">
+</head>
+
+<body>
+    <div id="modal-report">
+        <div id="container-modal">
+            <div class="modal-close">
+                <i class="fa-solid fa-xmark fa-xl"></i>
+            </div>
+            <h2 style="text-align: center; font-weight: bold;">Lịch sử mua hàng</h2>
+            <div class="items ">
+                <div class="list-item"></div>
+            </div>
+        </div>
+    </div>
+    <div class="wrapar">
+        <!-- Header Start-->
+        <div class="header">
+            <div class="header-top">
+                <div class="container">
+                    <div class="user-info pull-right">
+                        <div class="user">
+                            <ul>
+                                <li class="userName"></li>
+                                <li class="option">
+                                    <div>Tùy chọn <i style="font-size: 13px;" class="fa-solid fa-gear"></i></div>
+                                    <ul class="historyBuy">
+                                        <li>
+                                            <a id="buyItem" href="">Đơn mua</a>
+                                        </li>
+                                        <li style="border: none">
+                                            <a href="./index.html">Đăng xuất</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="header-mid">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-3 header-left">
+                            <div class="logo">
+                                <a href="main.html">
+                                    <img src="./assets/images/logop.jpg" alt="#">
+                                    <div>Cửa hàng thời trang</div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-md-6 search_block">
+                            <div class="search">
+                                <form>
+                                    <div class="search_cat">
+                                        <select class="search-category sel" name="search-category">
+                                            <option class="computer" value="man">Nam</option>
+                                            <option class="computer" value="girl">Nữ</option>
+                                        </select>
+                                        <span class="fa fa-angle-down"></span>
+                                    </div>
+                                    <input type="text" placeholder="Tìm kiếm" class="js-txt-search">
+                                    <button type="submit" class="btn submit js-btn-seach"> <span
+                                            class="fa fa-search"></span></button>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="col-md-3 header-right">
+                            <div class="cart">
+                                <a aria-expanded="false" aria-haspopup="true" role="button" data-toggle="dropdown"
+                                    class="dropdown-toggle" href="cart.html"><span><i
+                                            class="fa-solid fa-cart-shopping"></i><sup
+                                            class="total-cart">0</sup></span></a>
+                                <ul class="dropdown-menu pull-right cart-dropdown-menu">
+                                    <li>
+                                        <table class="table table-striped">
+                                            <tbody>
+                                                <tr>
+                                                    <td class="text-center"><a href="product.html"><img
+                                                                class="img-thumbnail"
+                                                                src="./assets/images/product/anh11.png" alt="img"></a>
+                                                    </td>
+                                                    <td class="text-left"><a href="#">Váy dài African </a></td>
+                                                    <td class="text-right quality">X1</td>
+                                                    <td class="text-right price-new">254.000</td>
+                                                    <td class="text-center"><button type="button" title="Remove"
+                                                            class="btn btn-xs remove"><i
+                                                                class="fa fa-times"></i></button></td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-center"><a href="product.html"><img
+                                                                class="img-thumbnail"
+                                                                src="./assets/images/product/car3-70x92.jpg"
+                                                                alt="img"></a></td>
+                                                    <td class="text-left"><a href="#">Váy bút chì Black African </a>
+                                                    </td>
+                                                    <td class="text-right quality">X1</td>
+                                                    <td class="text-right price-new">254.000</td>
+                                                    <td class="text-center"><button type="button" title="Remove"
+                                                            class="btn btn-xs remove"><i
+                                                                class="fa fa-times"></i></button></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </li>
+                                    <li>
+                                        <div class="minitotal">
+                                            <table class="table pricetotal">
+                                                <tbody>
+                                                    <tr>
+                                                        <td class="text-right"><strong>Tổng tiền</strong></td>
+                                                        <td class="text-right price-new">518.000</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="text-right"><strong>Eco Tax (-2.00)</strong></td>
+                                                        <td class="text-right price-new">20.000</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="text-right"><strong>VAT (20%)</strong></td>
+                                                        <td class="text-right price-new">42.000</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="text-right"><strong>Tổng</strong></td>
+                                                        <td class="text-right price-new">540.000VNĐ</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                            <div class="controls"> <a class="btn btn-primary pull-left" href="cart.html"
+                                                    id="view-cart"><i class="fa fa-shopping-cart"></i> View Cart </a> <a
+                                                    class="btn btn-primary pull-right" href="checkout.html"
+                                                    id="checkout"><i class="fa fa-share"></i> Checkout</a> </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="header-bottom">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="new-peachie" style="margin-bottom: 16px;">
+                                <ul class="toggle-newinFurther">
+                                    <li><a href="./main.html">TRANG CHỦ</a></li>
+                                    <li><a href="./girl-view.html">NỮ</a></li>
+                                    <li>
+                                        <a href="./man-view.html">NAM</a>
+                                    </li>
+                                    <li><a href="./about-us.html">VỀ CHÚNG TÔI</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Header End -->
+
+        <!-- Main menu Start -->
+        <section id="main-menu">
+            <div class="container">
+                <nav class="navbar navbar-default">
+                </nav>
+            </div>
+        </section>
+        <!-- Main menu End -->
+
+        <!-- offer block Start  -->
+        <section id="offer">
+            <div class="container">
+                <div class="offer">
+                    <p>Sale to lên tới 80% mỗi ngày vào 8.00 PM</p>
+                </div>
+            </div>
+        </section>
+        <!-- offer block end  -->
+        <!-- bredcrumb and page title block start  -->
+        <section id="bread-crumb">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3 col-sm-3 col-xs-3">
+                        <div class="page-title">
+
+                        </div>
+                    </div>
+                    <div class="col-md-9 col-sm-9 col-xs-9">
+                        <div class="bread-crumb">
+                            <ul>
+                                <li><a href="main.html">Trang chủ</a></li>
+                                <li>/</li>
+                                <li><a href="girl-view.html">Nữ</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- bredcrumb and page title block end  -->
+
+        <section id="product-category">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3 col-sm-4">
+                        <!-- left block Start  -->
+                        <section id="left">
+                            <div class="sidebar-block">
+                                <div class="sidebar-widget Category-block">
+                                    <div class="sidebar-title">
+                                        <h4> Sản phẩm</h4>
+                                    </div>
+                                    <ul class="title-toggle">
+                                        <li><button class="clothes-girl js-type">Quần áo</button></li>
+                                        <li><button class="shoes-girl js-type">Giày</button></li>
+                                        <li><button class="bags-girl js-type">Túi sách</button></li>
+                                    </ul>
+                                </div>
+                                <div class="sidebar-widget Shop-by-block">
+                                    <div class="sidebar-title">
+                                        <h4>Shop by</h4>
+
+                                    </div>
+                                    <ul class="title-toggle">
+                                        <li class="category">
+                                            <h5>Danh mục</h5>
+                                            <ul>
+                                                <li><button class="clothes-girl js-type">Quần áo </button></li>
+                                                <li><button class="shoes-girl js-type">Giày</button></li>
+                                                <li><button class="bags-girl js-type">Túi sách</button></li>
+                                            </ul>
+                                        </li>
+                                        <li class="color">
+                                            <h5>Màu sắc</h5>
+                                            <ul>
+                                                <li><button id="white" class="white-girl js-type">Trắng <span
+                                                            id="totalWhite-girl"></span></button>
+                                                </li>
+                                                <li><button id="black" class="black-girl js-type">Đen <span
+                                                            id="totalBlack-girl"></span></button>
+                                                </li>
+                                                <li><button id="pink" class="pink-girl js-type">Hồng <span
+                                                            id="totalPink-girl"></span></button></li>
+
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="sidebar-widget banner-block">
+                                    <div class="left-banner"> <a href="#"><img
+                                                src="./assets/images/product/left-banner.jpg" alt="#"></a> </div>
+                                </div>
+                                <div class="sidebar-widget Best-Products-block">
+
+                                    <div class="sidebar-title">
+                                        <h4>Sản phẩm bán chạy</h4>
+
+                                    </div>
+                                    <ul class="title-toggle">
+                                        <li>
+                                            <div class="product-block ">
+                                                <div class="item col-md-4 col-sm-4 col-xs-4">
+                                                    <div class="image">
+                                                        <a><img style="width: 100%; height: 100%;"
+                                                                class="img-responsive" title="T-shirt" alt="T-shirt"
+                                                                src="./assets/images/product/anh1.png"></a>
+                                                    </div>
+                                                </div>
+                                                <div class="item col-md-8 col-sm-8 col-xs-8">
+                                                    <div class="product-details">
+                                                        <div class="product-name">
+                                                            <h5><a>Đầm dạo phố dáng xòe xếp ly</a></h5>
+                                                        </div>
+                                                        <div class="review"></div>
+                                                        <div class="price"> <span class="price-new">1.200.000</span>
+                                                        </div>
+                                                        <div class="addto-cart"><a style="color: #ca5568" href="#">Thêm
+                                                                vào giỏ hàng</a></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="product-block ">
+                                                <div class="item col-md-4 col-sm-4 col-xs-4">
+                                                    <div class="image"><a><img style="width: 100%; height: 100%;"
+                                                                class="img-responsive" title="T-shirt" alt="T-shirt"
+                                                                src="./assets/images/product/anh5.png"></a> </div>
+                                                </div>
+                                                <div class="item col-md-8 col-sm-8 col-xs-8">
+                                                    <div class="product-details">
+                                                        <div class="product-name">
+                                                            <h5><a>Đầm ôm trễ vai </a></h5>
+                                                        </div>
+                                                        <div class="review"></div>
+                                                        <div class="price"> <span class="price-new">1.980.000</span>
+                                                        </div>
+                                                        <div class="addto-cart"><a style="color: #ca5568" href="#">Thêm
+                                                                vào giỏ hàng</a></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="product-block ">
+                                                <div class="item col-md-4 col-sm-4 col-xs-4">
+                                                    <div class="image"> <a><img style="width: 100%; height: 100%;"
+                                                                class="img-responsive" title="T-shirt" alt="T-shirt"
+                                                                src="./assets/images/product/anh7.png"></a> </div>
+                                                </div>
+                                                <div class="item col-md-8 col-sm-8 col-xs-8">
+                                                    <div class="product-details">
+                                                        <div class="product-name">
+                                                            <h5><a>Đầm organza eo cách điệu</a></h5>
+                                                        </div>
+                                                        <div class="review"></div>
+                                                        <div class="price"> <span class="price-new">2.540.000</span>
+                                                        </div>
+                                                        <div class="addto-cart"><a style="color: #ca5568" href="#">Thêm
+                                                                vào giỏ hàng</a></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </section>
+                        <!-- left block end  -->
+                    </div>
+                    <div class="col-md-9 col-sm-8">
+                        <!-- right block Start  -->
+                        <section id="right">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="view">
+                                        <div class="grid active ">
+                                            <div style="cursor: pointer;" class="grid-icon "></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="shoring pull-right">
+                                        <div class="short-by">
+                                            <p>Sắp xếp theo</p>
+                                            <div class="select-item">
+                                                <select>
+                                                    <option value="" selected="selected">T (A &gt; Z)</option>
+                                                    <option value="">Tên(Z &gt; A)</option>
+                                                    <option value="">giá(thấp&gt;cao)</option>
+                                                    <option value="">giá(cao &gt; thấp)</option>
+                                                </select>
+                                                <span class="fa fa-angle-down"></span>
+                                            </div>
+                                        </div>
+                                        <div class="show-item">
+                                            <p>Bộ lọc</p>
+                                            <div class="select-item">
+                                                <select>
+                                                    <option value="" selected="selected">12</option>
+                                                    <option value="">24</option>
+                                                    <option value="">6</option>
+                                                </select>
+                                                <span class="fa fa-angle-down"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="product-grid-view">
+                                <ul id="items-js" style="overflow: hidden;">
+                                    <!-- <li>
+                                        <div class="item col-md-4 col-sm-6 col-xs-6">
+                                            <div class="product-block ">
+                                                <div class="image"> <a><img class="img-responsive" title="T-shirt"
+                                                            alt="T-shirt"
+                                                            src="https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-lnhqdifpha7h3e"></a>
+                                                </div>
+                                                <div class="product-details">
+                                                    <div class="product-name">
+                                                        <h4><a style="color: rgb(202, 85, 104);">Giày Air Force 1 LV8
+                                                                Double Swoosh </a></h4>
+                                                    </div>
+                                                    <div class="price"> <span class="price-old">1.590.000</span> <span
+                                                            class="price-new">1.200.000</span> </div>
+                                                    <div class="product-hov">
+                                                        <ul>
+                                                            <li><button><i class="fa-regular fa-heart"></i></button>
+                                                            </li>
+                                                            <li><button class="add-cart" href="#">Thêm vào giỏ
+                                                                    hàng</button> </li>
+                                                        </ul>
+                                                        <div class="review"> <span class="rate"> <i
+                                                                    class="fa fa-star rated"></i> <i
+                                                                    class="fa fa-star rated"></i> <i
+                                                                    class="fa fa-star rated"></i> <i
+                                                                    class="fa fa-star rated"></i> <i
+                                                                    class="fa fa-star"></i> </span> </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li> -->
+                                </ul>
+                            </div>
+                        </section>
+                        <div class="row">
+                            <div class="pagination-bar">
+                                <ul class="listPage">
+                                    <!-- <li><a href="#"><i class="fa fa-angle-left"></i></a></li>
+                                    <li class="active"><a href="#">1</a></li>
+                                    <li><a href="#">2</a></li>
+                                    <li><a href="#">3</a></li>
+                                    <li><a href="#"><i class="fa fa-angle-right"></i></a></li> -->
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- right block end  -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer id="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="newslatter">
+                            <form>
+                                <h2>Cập nhật thông tin mới nhất</h2>
+                                <div class="input-group">
+                                    <input class=" form-control" type="text" placeholder="Enter Email">
+                                    <button type="submit" value="Sign up" class="btn btn-large btn-primary">Đăng
+                                        ký</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="about">
+                            <div class="footer-logo">
+                                <!-- sua logo and tieu chi -->
+                                <img src="./assets/images/logop.jpg" alt="logo">
+                                <h4>Phong cách của bạn</h4>
+                            </div>
+                            <p><i>PEACHIE luôn tôn trọng mọi cá tính và trải nghiệm của từng cá nhân.
+                                    Vì mỗi bản thể là một màu sắc duy nhất trên vũ trụ này, bạn sẽ luôn tỏa sáng theo
+                                    cách của riêng mình.</i></p>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="new-store">
+                            <h4>Về Peachie</h4>
+                            <ul class="toggle-footer">
+                                <li><a href="#">Nam</a></li>
+                                <li><a href="#">Nữ</a></li>
+                                <li><a href="#">Quần áo</a></li>
+                                <li><a href="#">Váy</a></li>
+                                <li><a href="#">Phụ kiện</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="information">
+                            <h4>Chăm sóc khách hàng</h4>
+                            <ul class="toggle-footer">
+                                <li><a href="#">Hoàn hàng</a></li>
+                                <li><a href="#">Phương thức vận chuyển</a></li>
+                                <li><a href="#">Danh mục thương hiệu</a></li>
+                                <li><a href="#">Hướng dẫn mua hàng</a></li>
+                                <li><a href="#">Tài khoản</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="contact">
+                            <h4>Liên hệ với chúng tôi</h4>
+                            <ul class="toggle-footer">
+                                <li> <i class="fa fa-map-marker"></i>
+                                    <div class="address-info"><b>Địa chỉ</b>: Tầng 2, nhà 17, ngõ 156 Mai Anh Tuấn, Đống
+                                        Đa, Hà Nội</p>
+                                    </div>
+                                </li>
+                                <li> <i class="fa fa-mobile fa-lg"></i>
+                                    <div class="call-info">+9187-654-321<br>
+                                        <span>+9873-654-321</span>
+                                    </div>
+                                </li>
+                                <li> <i class="fa fa-envelope"></i>
+                                    <div class="email-info"> <a href="#">supportteam1@gmail.com</a></div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="social-link">
+                                <ul>
+                                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-pinterest-p"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="copy-right">
+                                <p> Công ty TNHH DM&C - MST: 01234567.89 do sở Kế Hoạch và Đầu Tư Hà Nội cấp ngày
+                                    21/10/2023</p>
+                                <img src="./assets/images/bocongthuong.png" alt="boconghthuong">
+
+                                <p style="font-size: 12px;"><i>© 2023 - Bản quyền thuộc về Công ty TNHH PEACHIE</i></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- footer end -->
+
+    </div>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <div id="toast"></div>
+    <script src="js/jQuery.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="Bootstrap/js/bootstrap.js"></script>
+    <script src="js/jquery-ui.js"></script>
+    <!-- jQuery (price shorting) -->
+    <script>
+        $(function () {
+            $("#slider-range").slider({
+                range: true,
+                min: 0,
+                max: 800,
+                values: [75, 500],
+                slide: function (event, ui) {
+                    $("#amount").val("$" + ui.values[0] + " - $" + ui.values[1]);
+                }
+            });
+            $("#amount").val("$" + $("#slider-range").slider("values", 0) +
+                " - $" + $("#slider-range").slider("values", 1));
+        });
+    </script>
+    <script src="js/globle.js"></script>
+    <script src="./js/girl-products.js"></script>
+    <script src="./js/index.js"></script>
+    <script src="./js/pagination.js"></script>
+</body>
+
+</html>

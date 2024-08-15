@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin</title>
+  <link rel="shortcut icon" type="image/x-icon" href="./assets/images/favicon_logo.ico">
+  
+  <!-- export to excel -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script lang="javascript" src="./js/excel/dist/xlsx.full.min.js"></script>
+  
+  <link href='https://fonts.googleapis.com/css?family=Poppins:400,500,600,300,700' rel='stylesheet' type='text/css'>
+  <link href="./assets/Bootstrap/css/bootstrap.css" rel="stylesheet">
+  <link rel="stylesheet" href="./assets/fonts/fontawesome-free-6.5.1-web/fontawesome-free-6.5.1-web/css/all.css">
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <link rel="stylesheet" href="./assets/css/admin.css">
+</head>
+
+<body>
+  <header class="row">
+    <div class="row">
+      <div class="col-md-6 col-sm-6 col-xs-6">
+        <button style="padding-left: 8px; padding-right: 8px;" class="cssbuttons-io-button btn-product">
+          Quản lý sản phẩm
+        </button>
+      </div>
+      <div class="col-md-6 col-sm-6 col-xs-6">
+        <button class="cssbuttons-io-button js-show-modal" style="width: 106%;">
+          Xuất báo cáo
+          <div class="icon">
+              <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M0 0h24v24H0z" fill="none"></path>
+                  <path
+                      d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z"
+                      fill="currentColor"></path>
+              </svg>
+          </div>
+        </button>
+      </div>
+    </div>
+    <div class="col-md-6 col-sm-6 col-xs-6" style="text-align: right;">
+      <span style="padding-right: 10px; color: rgb(202, 85, 104); font-size: 16px;">Xin chào Mạnh Anh</span>
+      <span style="border-left: 1px solid #bbb; padding-left: 10px">
+        <a href="./index.html" data-toggle="modal" data-target="#login" class="user_name">Đăng xuất</a>
+      </span>
+    </div>
+  </header>
+  <main>
+    <div class="container products">
+      <div class="container">
+        <div class="title-main">
+          <div style="font-size: 24px; margin: 32px 0">Danh sách sản phẩm</div>
+          <div><button>Thêm sản phẩm</button></div>
+        </div>
+        <div class="row">
+          <div class="col-md-12 col-sm-12 col-xs-12">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <td>Sản phẩm</td>
+                  <td>Giá bán</td>
+                  <td>Giá khuyến mại</td>
+                  <td>Giới tính</td>
+                  <td>Số lượng nhập</td>
+                  <td>Màu sắc</td>
+                  <td>Thể loại</td>
+                  <td></td>
+  
+                </tr>
+              </thead>
+              <tbody id="list-product">
+                <!-- <tr>
+                  <td class="img" style="border: none">
+                    <div style="width: 50px;"><img style="width: 100%;" class="thanhthuy1" alt="img"
+                        src="./assets/images/giay1.jpg"></div>
+                    <p class="product-name">Giày nữ</p>
+                  </td>
+                  <td>200.000 VND</td>
+                  <td>200.000 VND</td>
+                  <td>Nữ</td>
+                  <td>200</td>
+                  <td>Đen</td>
+                  <td>200.000 VND</td>
+                  <td style="display: flex; border: none; gap: 4px;">
+                    <div><button id="btnModify">Sửa</button></div>
+                    <div><button id="btnDelete">Xóa</button></div>
+                  </td>
+                </tr> -->
+              </tbody>
+            </table>
+          </div>
+  
+        </div>
+      </div>
+      <div class="modal-add-product">
+        <form>
+          <div class="modal-close" >
+            <i class="fa-solid fa-xmark fa-xl"></i>
+          </div>
+          
+          <div class="form-item">
+            <label for="txtNameP">Tên sản phẩm:</label>
+            <input type="text" id="txtNameP">
+          </div>
+          <div class="form-item">
+            <label for="txtImgP">Link hình ảnh sản phẩm:</label>
+            <input type="text" id="txtImgP">
+          </div>
+          <div class="form-item">
+            <label for="txtPriceFakeP">Giá bán:</label>
+            <input type="text" id="txtPriceFakeP">
+          </div>
+          <div class="form-item">
+            <label for="txtPriceP">Giá khuyến mại:</label>
+            <input type="text" id="txtPriceP">
+          </div>
+          <div style="display: flex;">
+            <div><label for="" style="margin-bottom: 1px" >Giới tính:</label></div>
+            <div style="margin: 0 16px; display: flex; align-items: center; column-gap: 4px">
+              <input style="margin: 0" type="radio" id="chkNam" name="chk" checked>
+              <label style="margin: 0" for="chkNam">Nam</label>
+            </div>
+            <div style="margin: 0 16px; display: flex; align-items: center; column-gap: 4px">
+              <input style="margin: 0" type="radio" id="chkNu" name="chk">
+              <label style="margin: 0" for="chkNam">Nữ</label>
+            </div>
+          </div>
+          <div class="form-item">
+            <label style="margin: 0" for="txtTotalP">Số lượng nhập:</label>
+            <input style="margin: 0" type="text" id="txtTotalP">
+          </div>
+          <div class="form-item dir-row"  >
+            <div> 
+              <label for="txtColorP">Màu sắc:</label>
+              <select name="selColor" id="selColor" style="text-align: center;">
+                <option value="white">Trắng</option>
+                <option value="black">Đen</option>
+                <option value="pink">Hồng</option>
+                <option value="blue">Xanh</option>
+                <option value="yellow">Vàng</option>
+                <option value="purple">Tím</option>
+              </select>
+            </div>
+            <div>
+              <label for="txtColorP">Thể loại:</label>
+              <select name="selType" id="selType" style="text-align: center;">
+                <option value="clothes">Quần áo</option>
+                <option value="shoes">Giày</option>
+                <option value="bags">Túi</option>
+                <option value="wallets">Ví</option>
+              </select>
+            </div>
+          </div>
+          <div class="btnThem"><button id="btnAdd">Thêm sản phẩm</button></div>
+          <div class="importJSON">
+            <div>
+              <input type="file" id="file" accept=".json">
+            </div>
+            <div>
+              <button id="btnUpLoad">Tải lên</button>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="modal-modify-product">
+        <form>
+          <div class="modal-close" >
+            <i class="fa-solid fa-xmark fa-xl"></i>
+          </div>
+          <div class="form-item">
+            <label for="txtNameModifyP">Tên sản phẩm:</label>
+            <input type="text" id="txtNameModifyP">
+          </div>
+          <div class="form-item">
+            <label for="txtImgModifyP">Link hình ảnh sản phẩm:</label>
+            <input type="text" id="txtImgModifyP">
+          </div>
+          <div class="form-item">
+            <label for="txtPriceFakeModifyP">Giá bán:</label>
+            <input type="text" id="txtPriceFakeModifyP">
+          </div>
+          <div class="form-item">
+            <label for="txtPriceModifyP">Giá khuyến mại:</label>
+            <input type="text" id="txtPriceModifyP">
+          </div>
+          <div style="display: flex;">
+            <div><label for="" style="margin-bottom: 1px" >Giới tính:</label></div>
+            <div style="margin: 0 16px; display: flex; align-items: center; column-gap: 4px">
+              <input style="margin: 0" type="radio" id="chkNamModify" name="chkM">
+              <label style="margin: 0" for="chkNam">Nam</label>
+            </div>
+            <div style="margin: 0 16px; display: flex; align-items: center; column-gap: 4px">
+              <input style="margin: 0" type="radio" id="chkNuModify" name="chkM">
+              <label style="margin: 0" for="chkNam">Nữ</label>
+            </div>
+          </div>
+          <div class="form-item">
+            <label for="txtTotalModifyP">Số lượng nhập:</label>
+            <input type="text" id="txtTotalModifyP">
+          </div>
+          <div class="form-item dir-row"  >
+            <div> 
+              <label for="txtColorModifyP">Màu sắc:</label>
+              <select name="selColor" id="selColorModify" style="text-align: center;">
+                <option value="white">Trắng</option>
+                <option value="black">Đen</option>
+                <option value="pink">Hồng</option>
+                <option value="blue">Xanh</option>
+                <option value="yellow">Vàng</option>
+                <option value="purple">Tím</option>
+              </select>
+            </div>
+            <div>
+              <label for="txtColorModifyP">Thể loại:</label>
+              <select name="selType" id="selTypeModify" style="text-align: center;">
+                <option value="clothes">Quần áo</option>
+                <option value="shoes">Giày</option>
+                <option value="bags">Túi</option>
+                <option value="wallets">Ví</option>
+              </select>
+            </div>
+          </div>
+          <div><button id="btnModify">Sửa</button></div>
+        </form>
+      </div>
+      <ul class="listPage ">
+          <li class="active">1</li>
+          <li>h</li>
+      </ul>
+    </div>
+    <div class="container export-file">
+      <div class="title-main">
+        <div style="font-size: 24px; margin: 32px 0">Báo cáo doanh thu</div>
+      </div>
+      <div class="modal-year" style="justify-content: space-between;">
+        <div>
+          <div style="display: inline-block;">Năm:</div>
+          <select id="sel">
+            <option value="2023">2023</option>
+            <option value="2022">2022</option>
+            <option value="2021">2021</option>
+          </select>
+          <div>Tháng: 12</div>
+        </div>
+        <div style="display: flex; justify-content: right;">
+            <button id="btnExport">
+                <i class="fa-solid fa-file-export"></i>Xuất tệp
+                <div class="arrow-wrapper">
+                  <div class="arrow"></div>
+                </div>
+            </button>
+        </div>
+      </div>
+      <table id="modal-table" class="table table-striped">
+        <thead>
+            <tr class="table-danger">
+                <td>STT</td>
+                <td>Tên sản phẩm</td>
+                <td>Đơn giá</td>
+                <td>Số lượng nhập</td>
+                <td>Số lượng bán</td>
+                <td>Tồn kho</td>
+                <td>Thành tiền</td>
+            </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </main>
+  </div>
+</body>
+<script src="./js/admin.js"></script>
+<script src="./js/pagination.js"></script>
+</html>

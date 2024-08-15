@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="" />
+    <meta name="author" content="webtrap">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    <title>Cart</title>
+    <!-- export to excel -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script lang="javascript" src="../js/excel/dist/xlsx.full.min.js"></script>
+
+    <!-- Favicone Icon -->
+    <link rel="shortcut icon" type="image/x-icon" href="./assets/images/favicon.ico">
+    <link rel="icon" type="image/png" href="./assets/images/favicon_logo.ico">
+    <link rel="apple-touch-icon" href="./assets/images/favicon_logo.ico">
+    <link href="./assets/css/jquery-ui.css" rel="stylesheet">
+    <link href="./assets/Bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="./assets/css/style.css" rel="stylesheet" type="text/css">
+    <link href="./assets/css/font-awesome.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Poppins:400,500,600,300,700' rel='stylesheet' type='text/css'>
+    <script src="https://kit.fontawesome.com/203ae9be09.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./assets/fonts/fontawesome-free-6.5.1-web/fontawesome-free-6.5.1-web/css/all.css">
+</head>
+
+<body>
+    <div id="modal-report">
+        <div id="container-modal">
+            <div class="modal-close">
+                <i class="fa-solid fa-xmark fa-xl"></i>
+            </div>
+            <h2 style="text-align: center; font-weight: bold;">Lịch sử mua hàng</h2>
+            <div class="items ">
+                <div class="list-item"></div>
+            </div>
+        </div>
+    </div>
+    <div class="wrapar">
+        <!-- Header Start-->
+        <div class="header">
+            <div class="header-top">
+                <div class="container">
+                    <div class="user-info pull-right">
+                        <div class="user">
+                            <ul>
+                                <li class="userName"></li>
+                                <li class="option">
+                                    <div>Tùy chọn <i style="font-size: 13px;" class="fa-solid fa-gear"></i></div>
+                                    <ul class="historyBuy">
+                                        <li>
+                                            <a id="buyItem" href="">Đơn mua</a>
+                                        </li>
+                                        <li style="border: none">
+                                            <a href="./index.html">Đăng xuất</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="header-mid">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-3 header-left">
+                            <div class="logo">
+                                <a href="main.html">
+                                    <img src="./assets/images/logop.jpg" alt="#">
+                                    <div>Cửa hàng thời trang</div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-md-6 search_block">
+                            <div class="search">
+                                <form>
+                                    <div class="search_cat">
+                                        <select class="search-category sel" name="search-category">
+                                            <option class="computer" value="man">Nam</option>
+                                            <option class="computer" value="girl">Nữ</option>
+                                        </select>
+                                        <span class="fa fa-angle-down"></span>
+                                    </div>
+                                    <input type="text" placeholder="Tìm kiếm" class="js-txt-search">
+                                    <button type="submit" class="btn submit js-btn-seach"> <span
+                                            class="fa fa-search"></span></button>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="col-md-3 header-right">
+                            <div class="cart">
+                                <a aria-expanded="false" aria-haspopup="true" role="button" data-toggle="dropdown"
+                                    class="dropdown-toggle" href="cart.html"><span><i
+                                            class="fa-solid fa-cart-shopping"></i><sup
+                                            class="total-cart">0</sup></span></a>
+                                <ul class="dropdown-menu pull-right cart-dropdown-menu">
+                                    <li>
+                                        <table class="table table-striped">
+                                            <tbody>
+                                                <tr>
+                                                    <td class="text-center"><a href="product.html"><img
+                                                                class="img-thumbnail"
+                                                                src="./assets/images/product/anh11.png" alt="img"></a>
+                                                    </td>
+                                                    <td class="text-left"><a href="#">Váy dài African </a></td>
+                                                    <td class="text-right quality">X1</td>
+                                                    <td class="text-right price-new">254.000</td>
+                                                    <td class="text-center"><button type="button" title="Remove"
+                                                            class="btn btn-xs remove"><i
+                                                                class="fa fa-times"></i></button></td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-center"><a href="product.html"><img
+                                                                class="img-thumbnail"
+                                                                src="./assets/images/product/car3-70x92.jpg"
+                                                                alt="img"></a></td>
+                                                    <td class="text-left"><a href="#">Váy bút chì Black African </a>
+                                                    </td>
+                                                    <td class="text-right quality">X1</td>
+                                                    <td class="text-right price-new">254.000</td>
+                                                    <td class="text-center"><button type="button" title="Remove"
+                                                            class="btn btn-xs remove"><i
+                                                                class="fa fa-times"></i></button></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </li>
+                                    <li>
+                                        <div class="minitotal">
+                                            <table class="table pricetotal">
+                                                <tbody>
+                                                    <tr>
+                                                        <td class="text-right"><strong>Tổng tiền</strong></td>
+                                                        <td class="text-right price-new">518.000</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="text-right"><strong>Eco Tax (-2.00)</strong></td>
+                                                        <td class="text-right price-new">20.000</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="text-right"><strong>VAT (20%)</strong></td>
+                                                        <td class="text-right price-new">42.000</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="text-right"><strong>Tổng</strong></td>
+                                                        <td class="text-right price-new">540.000VNĐ</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                            <div class="controls"> <a class="btn btn-primary pull-left" href="cart.html"
+                                                    id="view-cart"><i class="fa fa-shopping-cart"></i> View Cart </a> <a
+                                                    class="btn btn-primary pull-right" href="checkout.html"
+                                                    id="checkout"><i class="fa fa-share"></i> Checkout</a> </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="header-bottom">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="new-peachie" style="margin-bottom: 16px;">
+                                <ul class="toggle-newinFurther">
+                                    <li><a href="./main.html">TRANG CHỦ</a></li>
+                                    <li><a href="./girl-view.html">NỮ</a></li>
+                                    <li>
+                                        <a href="./man-view.html">NAM</a>
+                                    </li>
+                                    <li><a href="./about-us.html">VỀ CHÚNG TÔI</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Header End -->
+
+        <!-- Main menu Start -->
+        <section id="main-menu">
+            <div class="container">
+                <nav class="navbar navbar-default">
+                </nav>
+            </div>
+        </section>
+        <!-- Main menu End -->
+
+        <!-- offer block Start  -->
+        <section id="offer">
+            <div class="container">
+                <div class="offer">
+                    <p>Sale to lên tới 80% mỗi ngày vào 8.00 PM</p>
+                </div>
+            </div>
+        </section>
+        <!-- offer block end  -->
+
+        <!-- bredcrumb and page title block start  -->
+        <section id="bread-crumb">
+            <div class="container">
+                <div class="row" style="display: flex; align-items: center">
+                    <div class="col-md-3 col-sm-3 col-xs-3">
+                    </div>
+                    <div class="col-md-9 col-sm-9 col-xs-9">
+                        <div class="bread-crumb">
+                            <ul>
+                                <li><a href="main.html">Trang chủ</a></li>
+                                <li>/</li>
+                                <li><a href="cart.html">Giỏ hàng</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- bredcrumb and page title block end  -->
+
+        <section id="cart-page-contain">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-9 col-xs-12">
+                        <!-- left block Start  -->
+                        <div class="cart-content table-responsive">
+                            <table class="cart-table table-responsive" style="width:100%">
+                                <thead>
+                                    <tr class="Cartproduct carttableheader">
+                                        <td style="width:40%">Sản phẩm</td>
+                                        <td style="width:15%">Đơn giá</td>
+                                        <td style="width:10%">Số lượng</td>
+                                        <td style="width:10%">Số tiền</td>
+                                        <td class="delete" style="width:10%">&nbsp;</td>
+                                    </tr>
+                                </thead>
+                                <tbody id="tbody">
+                                    <!-- <tr class="Cartproduct">
+                                    <td class="img" >
+                                        <div style="width: 50%;"><img style="width: 100%;" class="thanhthuy1" alt="img" src="./assets/./images/product/anh4.png"></div>
+                                        <p class="product-name">Đầm dáng dài ôm eo</p>
+                                    </td>
+                                    <td >
+                                        <div class="price">340.000đ</div>
+                                    </td>
+                                    <td class="product-quantity">
+                                        <div class="quantity">
+                                            <input style="text-align: center; border: none;outline: none;" type="number" class="input-text qty text" value="1" min="1" name="cart">
+                                        </div>
+                                    </td>
+                                    <td  class="price">600.000đ</td>
+                                    <td class="delete"><a title="Delete"> <i style="color: #666" class="glyphicon glyphicon-trash "></i></a></td>
+                                </tr> -->
+
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="cart-bottom">
+                            <div class="box-footer">
+                                <div class="pull-left"><a class="btn btn-default" href="main.html"> <i
+                                            class="fa fa-arrow-left"></i> &nbsp; Tiếp tục mua sắm </a></div>
+                                <form class="pull-right" action="./cart.html">
+                                    <button class="btn btn-default " type="submit"><i class="fa fa-undo"></i> &nbsp; Cập
+                                        nhật giỏ hàng</button>
+                                </form>
+                            </div>
+                        </div>
+                        <!-- left block end  -->
+                    </div>
+                    <div class="col-md-3 col-xs-12">
+                        <!-- right block Start  -->
+                        <section id="right">
+                            <div class="sidebar-block">
+                                <div class="sidebar-widget">
+                                    <div class="sidebar-title">
+                                        <h4>Tóm tắt giỏ hàng</h4>
+                                    </div>
+                                    <div id="order-detail-content" class="title-toggle table-block">
+                                        <div class="carttable">
+                                            <table class="table" id="cart-summary">
+                                                <tbody>
+                                                    <tr>
+                                                        <td>Tổng số sản phẩm</td>
+                                                        <td class="price text-center total-cart">3</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Vận chuyển</td>
+                                                        <td class="price text-center">
+                                                            <span class="success" id="transport">Miễn phí vận
+                                                                chuyển!</span>
+                                                        </td>
+                                                    </tr>
+                                                    <tr class="cart-total-price ">
+                                                        <td>Tổng tiền sản phẩm</td>
+                                                        <td class="price text-center js-total-price">0 VND</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td> Tổng cộng</td>
+                                                        <td class="text-center js-total-price" id="total-price">0 VND
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td colspan="2">
+                                                            <div class="input-append couponForm">
+                                                                <input type="text" placeholder="Mã giảm giá"
+                                                                    id="appendedInputButton">
+                                                                <button type="button" class="thuy">Áp dụng</button>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="checkout"> <a href="checkout-step1.html" title="checkout"
+                                        class="btn btn-default ">Tiến hành thanh toán</a> </div>
+                            </div>
+                        </section>
+                        <!-- left block end  -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer block Start  -->
+        <footer id="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="newslatter">
+                            <form>
+                                <h2>Cập nhật thông tin mới nhất</h2>
+                                <div class="input-group">
+                                    <input class=" form-control" type="text" placeholder="Enter Email">
+                                    <button type="submit" value="Sign up" class="btn btn-large btn-primary">Đăng
+                                        ký</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="about">
+                            <div class="footer-logo">
+                                <!-- sua logo and tieu chi -->
+                                <img src="./assets/images/logop.jpg" alt="logo">
+                                <h4>Phong cách của bạn</h4>
+                            </div>
+                            <p><i>PEACHIE luôn tôn trọng mọi cá tính và trải nghiệm của từng cá nhân.
+                                    Vì mỗi bản thể là một màu sắc duy nhất trên vũ trụ này, bạn sẽ luôn tỏa sáng theo
+                                    cách của riêng mình.</i></p>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="new-store">
+                            <h4>Về Peachie</h4>
+                            <ul class="toggle-footer">
+                                <li><a href="#">Nam</a></li>
+                                <li><a href="#">Nữ</a></li>
+                                <li><a href="#">Quần áo</a></li>
+                                <li><a href="#">Váy</a></li>
+                                <li><a href="#">Phụ kiện</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="information">
+                            <h4>Chăm sóc khách hàng</h4>
+                            <ul class="toggle-footer">
+                                <li><a href="#">Hoàn hàng</a></li>
+                                <li><a href="#">Phương thức vận chuyển</a></li>
+                                <li><a href="#">Danh mục thương hiệu</a></li>
+                                <li><a href="#">Hướng dẫn mua hàng</a></li>
+                                <li><a href="#">Tài khoản</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="contact">
+                            <h4>Liên hệ với chúng tôi</h4>
+                            <ul class="toggle-footer">
+                                <li> <i class="fa fa-map-marker"></i>
+                                    <div class="address-info"><b>Địa chỉ</b>: Tầng 2, nhà 17, ngõ 156 Mai Anh Tuấn, Đống
+                                        Đa, Hà Nội</p>
+                                    </div>
+                                </li>
+                                <li> <i class="fa fa-mobile fa-lg"></i>
+                                    <div class="call-info">+9187-654-321<br>
+                                        <span>+9873-654-321</span>
+                                    </div>
+                                </li>
+                                <li> <i class="fa fa-envelope"></i>
+                                    <div class="email-info"> <a href="#">supportteam1@gmail.com</a></div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="social-link">
+                                <ul>
+                                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-pinterest-p"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="copy-right">
+                                <p> Công ty TNHH DM&C - MST: 01234567.89 do sở Kế Hoạch và Đầu Tư Hà Nội cấp ngày
+                                    21/10/2023</p>
+                                <img src="./assets/images/bocongthuong.png" alt="boconghthuong">
+
+                                <p style="font-size: 12px;"><i>© 2023 - Bản quyền thuộc về Công ty TNHH PEACHIE</i></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- footer end -->
+    </div>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <div id="modal-report">
+        <div id="container-modal">
+            <div class="modal-close">
+                <i class="fa-solid fa-xmark fa-xl"></i>
+            </div>
+            <h2 style="text-align: center; font-weight: bold;">Báo cáo doanh thu</h2>
+            <div class="modal-year">
+                <div>Năm:</div>
+                <select id="sel">
+                    <option value="2023">2023</option>
+                    <option value="2022">2022</option>
+                    <option value="2021">2021</option>
+                </select>
+            </div>
+            <div>Tháng: 12</div>
+            <div style="display: flex; justify-content: right;">
+                <button id="btnExport">
+                    <i class="fa-solid fa-file-export"></i>
+                    Xuất tệp
+                    <div class="arrow-wrapper">
+                        <div class="arrow"></div>
+                    </div>
+
+                </button>
+            </div>
+            <table id="modal-table" class="table table-striped">
+                <thead>
+                    <tr class="table-danger">
+                        <td>STT</td>
+                        <td>Tên sản phẩm</td>
+                        <td>Đơn giá</td>
+                        <td>Số lượng nhập</td>
+                        <td>Số lượng bán</td>
+                        <td>Tồn kho</td>
+                        <td>Thành tiền</td>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </div>
+
+
+    <script src="js/jQuery.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="Bootstrap/js/bootstrap.js"></script>
+    <script src="js/globle.js"></script>
+    <script src="./js/cart.js"></script>
+    <script src="./js/index.js"></script>
+</body>
+
+</html>

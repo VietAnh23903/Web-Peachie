@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="keywords" content="" />
+  <meta name="author" content="webtrap">
+  <title>About</title>
+  <!-- Favicone Icon -->
+  <link rel="shortcut icon" type="image/x-icon" href="./assets/images/favicon_logo.ico">
+  <!-- thay logo -->
+  <link rel="icon" type="image/jpg" href="./assets/images/logop.jpg">
+
+  <link rel="apple-touch-icon" href="./assets/images/logop.jpg">
+  <link href="./assets/Bootstrap/css/bootstrap.css" rel="stylesheet">
+  <link rel="stylesheet" href="./assets/css/DioProgress.css" type="text/css">
+
+  <link href="./assets/css/style.css" rel="stylesheet" type="text/css">
+
+  <link href="./assets/css/font-awesome.css" rel="stylesheet" type="text/css">
+  <link href='https://fonts.googleapis.com/css?family=Poppins:300,500,600,700' rel='stylesheet' type='text/css'>
+  <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+  <link href="./assets/css/owl.carousel.css" rel="stylesheet" type="text/css">
+  <script src="js/DioProgress.js"></script>
+  <!-- <script src="https://kit.fontawesome.com/203ae9be09.js" crossorigin="anonymous"></script> -->
+  <link rel="stylesheet" href="./assets/fonts/fontawesome-free-6.5.1-web/fontawesome-free-6.5.1-web/css/all.css">
+
+</head>
+<body>
+  <div id="modal-report">
+    <div id="container-modal">
+      <div class="modal-close">
+        <i class="fa-solid fa-xmark fa-xl"></i>
+      </div>
+      <h2 style="text-align: center; font-weight: bold;">Lịch sử mua hàng</h2>
+      <div class="items ">
+        <div class="list-item"></div>
+      </div>
+    </div>
+  </div>
+  <div class="wrapar">
+    <!-- Header Start-->
+    <div class="header">
+      <div class="header-top">
+        <div class="container">
+
+          <div class="user-info pull-right">
+            <div class="user">
+              <ul>
+                <li class="userName"></li>
+                <li class="option">
+                  <div>Tùy chọn <i style="font-size: 13px;" class="fa-solid fa-gear"></i></div>
+                  <ul class="historyBuy">
+                    <li>
+                      <a id="buyItem" href="">Đơn mua</a>
+                    </li>
+                    <li style="border: none">
+                      <a href="./index.html">Đăng xuất</a>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="header-mid">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-3 header-left">
+              <div class="logo">
+                  <a href="main.html">
+                      <img src="./assets/images/logop.jpg" alt="#">
+                      <div>Cửa hàng thời trang</div>
+                  </a>
+              </div>            
+            </div>
+            <div class="col-md-6 search_block">
+              <div class="search">
+                <form>
+                    <div class="search_cat">
+                        <select class="search-category sel" name="search-category" >
+                            <option class="computer" value="man">Nam</option>
+                            <option class="computer"value="girl" >Nữ</option>
+                        </select>
+                        <span class="fa fa-angle-down"></span>
+                    </div>
+                    <input type="text" placeholder="Tìm kiếm" class="js-txt-search">
+                    <button type="submit" class="btn submit js-btn-seach"> <span
+                            class="fa fa-search"></span></button>
+                </form>
+              </div>
+            </div>
+            <div class="col-md-3 header-right">
+              <div class="cart">
+                <a aria-expanded="false" aria-haspopup="true" role="button" data-toggle="dropdown"
+                  class="dropdown-toggle" href="cart.html"><span><i class="fa-solid fa-cart-shopping"></i><sup
+                      class="total-cart">0</sup></span></a>
+                <ul class="dropdown-menu pull-right cart-dropdown-menu">
+                  <li>
+                    <table class="table table-striped">
+                      <tbody>
+                        <tr>
+                          <td class="text-center"><a href="product.html"><img class="img-thumbnail"
+                                src="./assets/images/product/anh11.png" alt="img"></a></td>
+                          <td class="text-left"><a href="#">Váy dài African </a></td>
+                          <td class="text-right quality">X1</td>
+                          <td class="text-right price-new">254.000</td>
+                          <td class="text-center"><button type="button" title="Remove" class="btn btn-xs remove"><i
+                                class="fa fa-times"></i></button></td>
+                        </tr>
+                        <tr>
+                          <td class="text-center"><a href="product.html"><img class="img-thumbnail"
+                                src="./assets/images/product/car3-70x92.jpg" alt="img"></a></td>
+                          <td class="text-left"><a href="#">Váy bút chì Black African </a></td>
+                          <td class="text-right quality">X1</td>
+                          <td class="text-right price-new">254.000</td>
+                          <td class="text-center"><button type="button" title="Remove" class="btn btn-xs remove"><i
+                                class="fa fa-times"></i></button></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </li>
+                  <li>
+                    <div class="minitotal">
+                      <table class="table pricetotal">
+                        <tbody>
+                          <tr>
+                            <td class="text-right"><strong>Tổng tiền</strong></td>
+                            <td class="text-right price-new">518.000</td>
+                          </tr>
+                          <tr>
+                            <td class="text-right"><strong>Eco Tax (-2.00)</strong></td>
+                            <td class="text-right price-new">20.000</td>
+                          </tr>
+                          <tr>
+                            <td class="text-right"><strong>VAT (20%)</strong></td>
+                            <td class="text-right price-new">42.000</td>
+                          </tr>
+                          <tr>
+                            <td class="text-right"><strong>Tổng</strong></td>
+                            <td class="text-right price-new">540.000VNĐ</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                      <div class="controls"> <a class="btn btn-primary pull-left" href="cart.html" id="view-cart"><i
+                            class="fa fa-shopping-cart"></i> View Cart </a> <a class="btn btn-primary pull-right"
+                          href="checkout.html" id="checkout"><i class="fa fa-share"></i> Checkout</a> </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="header-bottom">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="new-peachie" style="margin-bottom: 16px;">
+                <ul class="toggle-newinFurther">
+                  <li><a href="./main.html">TRANG CHỦ</a></li>
+                  <li><a href="./girl-view.html">NỮ</a></li>
+                  <li>
+                    <a href="./man-view.html">NAM</a>
+                  </li>
+                  <li><a href="./about-us.html">VỀ CHÚNG TÔI</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Header End -->
+
+    <!-- Main menu Start -->
+    <section id="main-menu">
+      <div class="container">
+        <nav class="navbar navbar-default">
+        </nav>
+      </div>
+    </section>
+    <!-- Main menu End -->
+
+    <!-- offer block Start  -->
+    <section id="offer">
+      <div class="container">
+        <div class="offer">
+          <p>Sale to lên tới 80% mỗi ngày vào 8.00 PM</p>
+        </div>
+      </div>
+    </section>
+    <!-- offer block end  -->
+
+    <!-- bredcrumb and page title block start  -->
+    <section id="bread-crumb">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3">
+            <div class="page-title">
+            </div>
+          </div>
+          <div class="col-md-9">
+            <div class="bread-crumb">
+              <ul>
+                <li><a href="main.html">Trang chủ</a></li>
+                <li>/</li>
+                <li><a href="about-us.html">Về chúng tôi</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- bredcrumb and page title block end  -->
+
+    <section id="about-page-contain">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="row">
+              <div class="col-md-4 col-sm-4 photos"> <img class="img-responsive" src="./assets/images/product/11.png"
+                  alt="#"> </div>
+
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="wwd">
+            <div class="col-md-12">
+              <h2 class="tf">Mục Đích Thành Lập Và Tiêu Chí Kinh Doanh </h2>
+            </div>
+            <div class="col-md-6">
+              <p>Với mục đích ban đầu là mong muốn giúp khách hàng tiếp cận và mua sắm các sản phẩm của cửa hàng một
+                cách dễ dàng và tiện lợi hơn vậy lên vào năm 2023 chúng tối chính thức tạo lập trang web với tên pechi
+              </p>
+            </div>
+            <div class="col-md-6">
+              <p>Ở đây chúng tôi không chỉ là kinh doanh mà còn mong muôn mang lại cho khách hàng nhưng trải nghiệm
+                tuyệt với nhất giúp tất cả các khách hàng có thể nói lên đúng cá tính và chất riêng của họ </p>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="skill">
+            <div class="col-md-4">
+              <h2 class="tf">Skills</h2>
+              <ul>
+                <li> <span>78%</span>
+                  <div id="progress1">
+                    <h5>Production Skills</h5>
+                  </div>
+                </li>
+                <li> <span>92%</span>
+                  <div id="progress2">
+                    <h5>Publishing Skills</h5>
+                  </div>
+                </li>
+                <li> <span>76%</span>
+                  <div id="progress3">
+                    <h5>Marketing Skills</h5>
+                  </div>
+                </li>
+                <li> <span>98%</span>
+                  <div id="progress4">
+                    <h5>Business Skills</h5>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="Experiences">
+            <div class="col-md-4">
+              <h2 class="tf">Kinh Nghiệm</h2>
+              <div class="exp-detail">
+                <h5>Dựa vào kinh nghiệm nhiều năm trong lĩnh vực kinh doanh các sản phẩm thời trang</h5>
+                <p>chúng tôi đã cố gắng tạo lên 1 trang web thân thiện,đơn giản,dễ tiếp cận đối với khách hàng và với
+                  đội ngũ nhân viên lâu năm chúng tôi tự tin có thể đáp ứng mọi yêu cầu của mọi khách hàng. </p>
+              </div>
+            </div>
+          </div>
+          <div class="work">
+            <div class="col-md-4">
+              <h2 class="tf">Công Việc</h2>
+              <ul>
+                <li><span>1</span>
+                  <h5>Là bước tiến lớn trong của cửa hàng</h5>
+                  <p>phát hành trang web</p>
+                </li>
+                <li><span>2</span>
+                  <h5>Mới nhưng không mất chất</h5>
+                  <p>luôn làm đúng với tiêu chí cửa hàng </p>
+                </li>
+                <li><span>3</span>
+                  <h5>Tiếp tục phát triển và còn hơn thế nữa </h5>
+                  <p>không ngừng đổi mới ngày càng bắt kịp người dùng </p>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer block Start  -->
+    <footer id="footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="newslatter">
+              <form>
+                <h2>Cập nhật thông tin mới nhất</h2>
+                <div class="input-group">
+                  <input class=" form-control" type="text" placeholder="Enter Email">
+                  <button type="submit" value="Sign up" class="btn btn-large btn-primary">Đăng ký</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-3">
+            <div class="about">
+              <div class="footer-logo">
+                <!-- sua logo and tieu chi -->
+                <img src="./assets/images/logop.jpg" alt="logo">
+                <h4>Phong cách của bạn</h4>
+              </div>
+              <p><i>PEACHIE luôn tôn trọng mọi cá tính và trải nghiệm của từng cá nhân.
+                  Vì mỗi bản thể là một màu sắc duy nhất trên vũ trụ này, bạn sẽ luôn tỏa sáng theo cách của riêng
+                  mình.</i></p>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="new-store">
+              <h4>Về Peachie</h4>
+              <ul class="toggle-footer">
+                <li><a href="#">Nam</a></li>
+                <li><a href="#">Nữ</a></li>
+                <li><a href="#">Quần áo</a></li>
+                <li><a href="#">Váy</a></li>
+                <li><a href="#">Phụ kiện</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="information">
+              <h4>Chăm sóc khách hàng</h4>
+              <ul class="toggle-footer">
+                <li><a href="#">Hoàn hàng</a></li>
+                <li><a href="#">Phương thức vận chuyển</a></li>
+                <li><a href="#">Danh mục thương hiệu</a></li>
+                <li><a href="#">Hướng dẫn mua hàng</a></li>
+                <li><a href="#">Tài khoản</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="contact">
+              <h4>Liên hệ với chúng tôi</h4>
+              <ul class="toggle-footer">
+                <li> <i class="fa fa-map-marker"></i>
+                  <div class="address-info"><b>Địa chỉ</b>: Tầng 2, nhà 17, ngõ 156 Mai Anh Tuấn, Đống Đa, Hà Nội</p>
+                  </div>
+                </li>
+                <li> <i class="fa fa-mobile fa-lg"></i>
+                  <div class="call-info">+9187-654-321<br>
+                    <span>+9873-654-321</span>
+                  </div>
+                </li>
+                <li> <i class="fa fa-envelope"></i>
+                  <div class="email-info"> <a href="#">supportteam1@gmail.com</a></div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="social-link">
+                <ul>
+                  <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                  <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                  <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                  <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                  <li><a href="#"><i class="fa fa-pinterest-p"></i></a></li>
+                  <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <div class="copy-right">
+                <p> Công ty TNHH DM&C - MST: 01234567.89 do sở Kế Hoạch và Đầu Tư Hà Nội cấp ngày 21/10/2023</p>
+                <img src="./assets/images/bocongthuong.png" alt="boconghthuong">
+
+                <p style="font-size: 12px;"><i>© 2023 - Bản quyền thuộc về Công ty TNHH PEACHIE</i></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- footer end -->
+
+
+  </div>
+  <script type="text/javascript">
+    $("#progress1").appendSimpleProgressBar();
+    $("#progress1").slow({ width: "78" });
+
+    $("#progress2").appendSimpleProgressBar();
+    $("#progress2").slow({ width: "92" });
+
+    $("#progress3").appendSimpleProgressBar();
+    $("#progress3").slow({ width: "76" });
+
+    $("#progress4").appendSimpleProgressBar();
+    $("#progress4").slow({ width: "98" });
+  </script>
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+  <script src="js/jQuery.js"></script>
+  <!-- Include all compiled plugins (below), or include individual files as needed -->
+  <!-- <script src="Bootstrap/js/bootstrap.js"></script> -->
+  <script src="js/owl.carousel.min.js"></script>
+  <script src="js/globle.js"></script>
+  <script src="./js/index.js"></script>
+</body>
+
+</html>

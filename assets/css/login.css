@@ -1,0 +1,266 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.active {
+  border-bottom: 3px solid #faaca8;
+}
+.container {
+  background-color: #faaca8;
+  background-image: linear-gradient(19deg, #faaca8 0%, #ddd6f3 100%);
+  height: 100vh;
+  overflow: auto;
+  font-size: 1rem;
+}
+.container form {
+  padding: 64px 16px;
+  background-color: #fff;
+  width: 380px;
+  text-align: center;
+  margin: 0 auto;
+  margin-top: 40px;
+  border-radius: 16px;
+  box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+.container form .title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 16px;
+}
+form #form-signup,
+form #form-login {
+  transition: transform 1s;
+}
+.container form .title #login,
+.container form .title #signup {
+  padding: 0 20px;
+  padding-bottom: 8px;
+  cursor: pointer;
+}
+
+/* style input */
+
+/* btn Đăng nhập */
+
+/* style btn Xác nhận */
+#otp {
+  display: none;
+  /* display: flex; */
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 16px;
+}
+#otp .vertify {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+#btn-vertify {
+  margin-right: 40px;
+  background-color: #eee;
+  border: none;
+  padding: 12px;
+  font-size: 1rem;
+  color: lightcoral;
+  box-shadow: 0 0.4rem #dfd9d9;
+  cursor: pointer;
+  border-radius: 1rem;
+}
+
+/* Btn đăng nhập */
+.container form #btn-signin,
+#btn-login {
+  margin: 8px 0;
+  padding: 4px;
+  font-size: inherit;
+}
+.container form #btn-signin,
+#btn-login {
+  width: 250px;
+  border-radius: 1rem;
+  background-color: #eee;
+  border: none;
+  padding: 12px;
+  font-size: 1rem;
+  color: lightcoral;
+  box-shadow: 0 0.4rem #dfd9d9;
+  cursor: pointer;
+  margin: 36px 0 20px 14px;
+}
+#btn-signin:active,
+#btn-vertify:active,
+#btn-login:active {
+  color: white;
+  box-shadow: 0 0.2rem #dfd9d9;
+  transform: translateY(0.2rem);
+}
+
+#btn-signin:hover:not(:disabled),
+#btn-vertify:hover:not(:disabled),
+#btn-login:hover:not(:disabled) {
+  background: lightcoral;
+  color: white;
+  text-shadow: 0 0.1rem #bcb4b4;
+}
+#btn-signin:disabled,
+#btn-vertify:disabled,
+#btn-login:disabled {
+  cursor: auto;
+  color: grey;
+}
+
+.container form #form-login {
+  position: absolute;
+  top: 96px;
+  left: -330px;
+}
+
+@keyframes toRight {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(100%);
+  }
+}
+
+.InputContainer {
+  width: 250px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(
+    to bottom,
+    rgb(227, 213, 255),
+    rgb(255, 231, 231)
+  );
+  border-radius: 30px;
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.075);
+}
+
+.input {
+  width: 240px;
+  height: 40px;
+  border: none;
+  outline: none;
+  caret-color: rgb(255, 81, 0);
+  background-color: rgb(255, 255, 255);
+  border-radius: 30px;
+  padding-left: 15px;
+  letter-spacing: 0.8px;
+  color: rgb(19, 19, 19);
+  font-size: 13.4px;
+}
+
+.login-input {
+  margin-left: 72px;
+  margin-top: 16px;
+}
+
+.group {
+  position: relative;
+}
+
+.inputName {
+  font-size: 16px;
+  padding: 10px 10px 10px 5px;
+  display: block;
+  width: 240px;
+  border: none;
+  border-bottom: 1px solid linear-gradient(
+    to bottom,
+    rgb(227, 213, 255),
+    rgb(255, 231, 231)
+  );;
+  background: transparent;
+}
+
+.inputName:focus {
+  outline: none;
+  border-bottom: none;
+}
+
+label {
+  color: #999;
+  font-size: 18px;
+  font-weight: normal;
+  position: absolute;
+  pointer-events: none;
+  left: 5px;
+  top: 10px;
+  transition: 0.2s ease all;
+  -moz-transition: 0.2s ease all;
+  -webkit-transition: 0.2s ease all;
+}
+
+.inputName:focus ~ label,
+.inputName:valid ~ label {
+  top: -16px;
+  font-size: 14px;
+  color: lightcoral;
+  font-weight: bold;
+}
+
+.bar {
+  position: relative;
+  display: block;
+  width: 240px;
+}
+
+.bar:before,
+.bar:after {
+  content: "";
+  height: 2px;
+  width: 0;
+  bottom: 1px;
+  position: absolute;
+  background: #faaca8;
+  transition: 0.2s ease all;
+  -moz-transition: 0.2s ease all;
+  -webkit-transition: 0.2s ease all;
+}
+
+.bar:before {
+  left: 50%;
+}
+
+.bar:after {
+  right: 50%;
+}
+
+.inputName:focus ~ .bar:before,
+.inputName:focus ~ .bar:after {
+  width: 50%;
+}
+
+.highlight {
+  position: absolute;
+  height: 60%;
+  width: 100px;
+  top: 25%;
+  left: 0;
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+.inputName:focus ~ .highlight {
+  animation: inputHighlighter 0.3s ease;
+}
+
+@keyframes inputHighlighter {
+  from {
+    background: #faaca8;
+  }
+
+  to {
+    width: 0;
+    background: transparent;
+  }
+}

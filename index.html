@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Log In</title>
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="./assets/images/favicon.ico"
+    />
+    <link rel="icon" type="image/png" href="./assets/images/favicon_logo.ico" />
+    <link rel="apple-touch-icon" href="./assets/images/favicon_logo.ico" />
+    <link href="./assets/css/jquery-ui.css" rel="stylesheet" />
+    <link href="./assets/css/login.css" rel="stylesheet" type="text/css" />
+    <!-- <link
+      href="./assets/css/font-awesome.css"
+      rel="stylesheet"
+      type="text/css"
+    /> -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Poppins:400,500,600,300,700"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link rel="stylesheet" href="./assets/fonts/fontawesome-free-6.5.1-web/fontawesome-free-6.5.1-web/css/all.css">
+    <!-- <script
+      src="https://kit.fontawesome.com/203ae9be09.js"
+      crossorigin="anonymous"
+    ></script> -->
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <form action="">
+        <div class="title">
+          <h3 id="login">Đăng nhập</h3>
+          <h3 id="signup" class="active">Đăng ký</h3>
+        </div>
+        <div id="form-signup">
+          <div class="group" style="margin: 12px 0 16px 60px;" >
+            <input required="" type="text" class="inputName" id="txtName">
+            <span class="highlight"></span>
+            <span class="bar"></span>
+            <label>Họ tên</label>
+          </div>
+          <div
+            class="InputContainer"
+            style="margin-left: 56px; margin-bottom: 16px"
+          >
+            <input
+              placeholder="Địa chỉ email"
+              class="input"
+              name="text"
+              type="text"
+              id="email-signup"
+            />
+          </div>
+          <div
+            class="InputContainer"
+            style="margin-left: 56px; margin-bottom: 16px"
+          >
+            <input
+              placeholder="Mật khẩu"
+              class="input"
+              name="text"
+              type="password"
+              id="password-signup"
+            />
+          </div>
+          <div class="InputContainer" style="margin-left: 56px">
+            <input
+              placeholder="Xác nhận mật khẩu"
+              class="input"
+              name="text"
+              type="password"
+              id="confirm-password"
+            />
+          </div>
+          <div>
+            
+          </div>
+          <button id="btn-signin" type="button">Đăng ký</button>
+        </div>
+
+        <div id="form-login">
+          <div class="login-input">
+            <div class="InputContainer" style="margin-bottom: 16px">
+              <input
+                placeholder="Email"
+                class="input"
+                name="text"
+                type="text"
+                id="email-login"
+              />
+            </div>
+            <div class="InputContainer" style="position: relative">
+              <input
+                placeholder="Mật khẩu"
+                class="input"
+                name="text"
+                type="password"
+                id="password-login"
+              />
+              <div id="icon-eyes" style="position: absolute; right: 12px">
+                <i style="color: #fee6e8" class="fas fa-eye-slash"></i>
+              </div>
+
+              <!--<i class="fas fa-eye"></i> -->
+            </div>
+          </div>
+          <div
+            id="text-error"
+            style="
+              display: none;
+              margin-left: 72px;
+              margin-top: 16px;
+              color: lightcoral;
+              font-weight: bold;
+            "
+          >
+            Tài khoản hoặc mật khẩu không đúng
+          </div>
+          <button style="margin-left: 72px" id="btn-login" type="button">
+            Đăng nhập
+          </button>
+        </div>
+      </form>
+    </div>
+  </body>
+  <script>
+    const login = document.getElementById("login");
+    const signup = document.getElementById("signup");
+    const formLoginnup = document.getElementById("form-login");
+    const formSignup = document.getElementById("form-signup");
+    const btnSignin = document.getElementById("btn-signin");
+    const btnLogin = document.getElementById("btn-login");
+    const otp = document.getElementById("otp");
+    const emailSignup = document.getElementById("email-signup");
+
+    const iconEyes = document.getElementById("icon-eyes");
+    const password = document.getElementById("password-login");
+
+    // show/hint password
+    iconEyes.onclick = () => {
+      password.type = password.type == "password" ? "text" : "password";
+
+      if (password.type == "password") {
+        iconEyes.innerHTML = `<i style="color: #fee6e8" class="fas fa-eye-slash"></i>`;
+      } else {
+        iconEyes.innerHTML = `<i style="color: #fee6e8" class="fas fa-eye"></i>`;
+      }
+    };
+
+    // show form signup and login
+    signup.onclick = () => {
+      formLoginnup.style.transform = "translateX(0px)";
+      formSignup.style.transform = "translateX(0px)";
+      signup.classList.add("active");
+      login.classList.contains("active") ? login.classList.remove("active") : 0;
+    };
+    const loginClick = () => {
+      formLoginnup.style.transform = "translateX(330px)";
+      formSignup.style.transform = "translateX(330px)";
+      login.classList.add("active");
+      signup.classList.contains("active")
+        ? signup.classList.remove("active")
+        : 0;
+    };
+    login.onclick = loginClick;
+
+    const regex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-z]{2,6}$/;
+    let users = localStorage.getItem("users")
+      ? JSON.parse(localStorage.getItem("users"))
+      : [];
+    // Đăng ký
+    const isCheck = () => {
+      if (document.getElementById("txtName").value == "") {
+        alert("Bạn chưa nhập tên!");
+        document.getElementById("txtName").focus();
+        return false;
+      }
+      if (emailSignup.value == "") {
+        alert("Bạn chưa nhập email!");
+        emailSignup.focus();
+        return false;
+      }
+      if (!regex.test(emailSignup.value)) {
+        alert("Email không đúng định dạng");
+        emailSignup.focus();
+        return false;
+      }
+      if (document.getElementById("password-signup").value == "") {
+        alert("Bạn chưa nhập mật khẩu!");
+        document.getElementById("password-signup").focus();
+        return false;
+      }
+      if (document.getElementById("confirm-password").value == "") {
+        alert("Bạn chưa nhập lại mật khẩu!");
+        document.getElementById("confirm-password").focus();
+        return false;
+      }
+      if (
+        document.getElementById("confirm-password").value !=
+        document.getElementById("password-signup").value
+      ) {
+        alert("Mật khẩu không giống nhau!");
+        document.getElementById("confirm-password").focus();
+        return false;
+      }
+
+      return true;
+    };
+
+    // tạo user đăng ký
+    btnSignin.onclick = () => {
+      if (isCheck()) {
+        user = {
+          userName: document.getElementById("txtName").value, 
+          email: emailSignup.value,
+          password: document.getElementById("password-signup").value,
+        };
+        let checkUser = users.some(
+          (value) => value.email === emailSignup.value
+        );
+        if (checkUser) {
+          alert("Email này đã được đăng ký");
+          emailSignup.select();
+          return;
+        }
+        users.push(user);
+        localStorage.setItem("users", JSON.stringify(users));
+        emailSignup.value = "";
+        document.getElementById("password-signup").value = "";
+        document.getElementById("confirm-password").value = "";
+        alert("Đăng ký thành công");
+        loginClick();
+      }
+    };
+
+    // Đăng nhập
+    const emailLogin = document.getElementById("email-login");
+    const isCheckLogin = () => {
+      if (emailLogin.value == "") {
+        alert("Bạn chưa nhập email!");
+        emailLogin.focus();
+        return false;
+      }
+      if (!regex.test(emailLogin.value)) {
+        alert("Email không đúng định dạng");
+        emailLogin.select();
+        return false;
+      }
+      if (document.getElementById("password-login").value == "") {
+        alert("Bạn chưa nhập mật khẩu!");
+        document.getElementById("password-login").focus();
+        return false;
+      }
+      return true;
+    };
+
+    // tạo account quản trị viên
+
+    localStorage.setItem("userAdmin",JSON.stringify({userName: "admin", email: "admin@gmail.com", password: "admin"}));
+    const userAdmin = JSON.parse(localStorage.getItem("userAdmin"));
+    btnLogin.onclick = () => {
+      if (isCheckLogin()) {
+        if (emailLogin.value == userAdmin.email && 
+            document.getElementById("password-login").value == userAdmin.password) {
+              location.href = "./admin.html";
+              return;
+        }
+        // check email nhập vào có chứa trogn user không
+        const isCheckUser = users.some(
+          (item) => item.email === emailLogin.value
+        );
+        const user = users.find((item) => item.email === emailLogin.value);
+        // lấy ra user đăng nhập vào để show ra userName ở các file HTML khác
+        localStorage.setItem("userLogin", JSON.stringify(user));
+        if (
+          !isCheckUser ||
+          document.getElementById("password-login").value != user.password
+        ) {
+          document.getElementById("text-error").style.display = "block";
+          emailLogin.value = "";
+          document.getElementById("password-login").value = "";
+          return;
+        }
+        if (document.getElementById("password-login").value == user.password) {
+          alert("Đăng nhập thàng công");
+          location.href = "./main.html";
+        }
+      }
+    };
+  </script>
+</html>
